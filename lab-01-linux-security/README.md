@@ -62,19 +62,11 @@ I learned:
 
 ## Processes and Services
 
-I used:
+I used `ps aux` to inspect running processes.
 
-`ps aux`
+I used `ps aux | grep ssh` to locate SSH-related processes.
 
-to inspect running processes.
-
-I used:
-
-`ps aux | grep ssh`
-
-to locate SSH-related processes.
-
-I also inspected the SSH service with:
+I inspected the SSH service with:
 
 `systemctl status ssh`
 
@@ -96,11 +88,10 @@ I identified:
 - TCP 3000 — AdGuard Home
 - TCP 8096 — Jellyfin
 
-I also learned that:
+I also learned:
 
-`0.0.0.0` means a service is listening on all IPv4 interfaces.
-
-`127.0.0.1` means a service is listening only on the local machine.
+- `0.0.0.0` means a service is listening on all IPv4 interfaces.
+- `127.0.0.1` means a service is listening only on the local machine.
 
 ## SSH Log Investigation
 
@@ -112,13 +103,13 @@ I filtered successful authentication events using:
 
 `grep "Accepted"`
 
-and failed authentication events using:
+I filtered failed authentication events using:
 
 `grep "Failed"`
 
 During the investigation, I identified both successful SSH authentication and a failed password attempt.
 
-This taught me to ask:
+I learned to investigate:
 
 1. Who attempted to log in?
 2. What IP address did the connection originate from?
@@ -126,21 +117,20 @@ This taught me to ask:
 4. Was authentication successful or unsuccessful?
 5. Is the activity expected?
 
+## What I Learned
+
+This lab helped me understand how Linux permissions, processes, services, network ports, and authentication logs work together.
+
+I practiced a basic SOC investigation workflow:
+
+**Observe → Filter → Identify → Investigate → Determine whether activity is expected**
+
 ## Lab Evidence
 
 The following screenshot contains redacted evidence from the hands-on lab. Network addresses and unnecessary identifying information were removed before publishing.
 
 ![Lab 01 Linux Security Evidence](redacted.png)
 
-## What I Learned
-
-This lab helped me understand how Linux permissions, processes, services, network ports, and authentication logs work together.
-
-I also practiced a basic SOC investigation workflow:
-
-**Observe → Filter → Identify → Investigate → Determine whether activity is expected**
-
 ## Next Steps
 
-Continue building the cybersecurity home lab and practice additional networking, Windows security, log analysis, and SOC investigation techniques.
-
+Continue building the cybersecurity home lab and practice networking, Windows security, log analysis, and SOC investigation techniques.
