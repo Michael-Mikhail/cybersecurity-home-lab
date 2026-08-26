@@ -1,4 +1,3 @@
-
 # Lab 01 — Linux Fundamentals & Security
 
 ## Objective
