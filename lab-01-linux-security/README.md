@@ -144,9 +144,3 @@ I also practiced a basic SOC investigation workflow:
 
 Continue building the cybersecurity home lab and practice additional networking, Windows security, log analysis, and SOC investigation techniques.
 
-## Lab Evidence
-
-The following screenshot contains redacted evidence from the hands-on lab. Network addresses and unnecessary identifying information were removed before publishing.
-
-![Lab 01 Linux Security Evidence](redacted.png)
-
