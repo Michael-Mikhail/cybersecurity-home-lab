@@ -132,6 +132,12 @@ This taught me to ask:
 4. Was authentication successful or unsuccessful?
 5. Is the activity expected?
 
+## Lab Evidence
+
+The following screenshot contains redacted evidence from the hands-on lab. Network addresses and unnecessary identifying information were removed before publishing.
+
+![Lab 01 Linux Security Evidence](redacted.png)
+
 ## What I Learned
 
 This lab helped me understand how Linux permissions, processes, services, network ports, and authentication logs work together.
