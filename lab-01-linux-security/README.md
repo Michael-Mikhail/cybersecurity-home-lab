@@ -7,9 +7,7 @@ The goal of this lab was to practice Linux administration and basic security inv
 I practiced identifying the system, managing file permissions, inspecting processes and services, identifying listening network ports, and investigating SSH authentication logs.
 
 ## Environment
-### System Information Evidence
 
-![Ubuntu Server system information](host%20name.jpg)
 - Ubuntu Server 26.04 LTS
 - Linux home server
 - SSH remote access
@@ -83,8 +81,6 @@ I also inspected the SSH service with:
 The SSH service was active and running.
 
 ## Network Investigation
-### Network Port Evidence
-![Linux listening network ports](network%20ports.png)
 
 I used:
 
@@ -107,9 +103,7 @@ I also learned that:
 `127.0.0.1` means a service is listening only on the local machine.
 
 ## SSH Log Investigation
-### SSH Authentication Evidence
 
-![Successful and failed SSH authentication](faild%20and%20accepted%20SSH%20inv.png)
 I inspected SSH logs using:
 
 `sudo journalctl -u ssh --no-pager`
