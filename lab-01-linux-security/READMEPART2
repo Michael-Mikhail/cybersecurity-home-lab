@@ -1,0 +1,123 @@
+## Analyst Interpretation
+
+The September 16 failed authentication attempt used the invalid username `michaal`.
+
+The same internal source IP, `10.0.0.16`, later successfully authenticated using the valid username `michael`.
+
+In this home-lab environment, the evidence is consistent with a mistyped username rather than a malicious login attempt.
+
+In a real SOC environment, an analyst should still verify:
+
+* Whether the source IP belongs to an authorized device
+* Whether the user recognizes the login
+* Whether multiple failed attempts occurred
+* Whether other usernames were attempted
+* Whether unusual activity occurred after the successful login
+
+---
+
+## Verdict
+
+**Likely benign / authorized activity**
+
+The failed login appears to have resulted from an incorrectly typed username.
+
+There is currently no evidence showing repeated brute-force attempts or unauthorized access.
+
+---
+
+## Recommended Actions
+
+* Verify that the source device is authorized.
+* Confirm the successful login with the account owner.
+* Continue monitoring SSH authentication activity.
+* Investigate repeated failed login attempts.
+* Escalate if unknown IP addresses or unusual accounts appear.
+* Consider SSH key-based authentication for stronger security.
+
+---
+
+## Commands Used
+
+### Check SSH service
+
+```bash
+sudo systemctl status ssh
+```
+
+### Review SSH logs
+
+```bash
+sudo journalctl -u ssh
+```
+
+### Show successful and failed SSH authentication
+
+```bash
+sudo journalctl -u ssh | grep -E "Accepted|Failed"
+```
+
+### Show logged-in users
+
+```bash
+who
+```
+
+### Show active sessions
+
+```bash
+w
+```
+
+### Show network sockets and ports
+
+```bash
+ss
+```
+
+---
+
+## Skills Practiced
+
+* Linux command line
+* SSH
+* Linux services
+* Authentication-log analysis
+* `journalctl`
+* `grep`
+* IP address identification
+* User-account investigation
+* Timeline creation
+* SOC alert triage
+* Evidence-based investigation
+
+---
+
+## What I Learned
+
+I learned how to investigate SSH activity using Linux authentication logs.
+
+I learned how to identify:
+
+* Successful authentication
+* Failed authentication
+* Invalid usernames
+* Source IP addresses
+* SSH source ports
+* Active user sessions
+
+I also learned that one failed login does not automatically mean an attack.
+
+A SOC analyst needs to examine the evidence, understand the context, build a timeline, and determine whether the activity is normal or suspicious.
+
+---
+
+## Conclusion
+
+This investigation identified both successful and failed SSH authentication events.
+
+The evidence indicates that the failed authentication was most likely caused by a mistyped username and that the later successful login was authorized.
+
+The investigation followed this SOC workflow:
+
+**Detect → Collect Evidence → Build Timeline → Analyze → Determine Verdict → Recommend Action**
